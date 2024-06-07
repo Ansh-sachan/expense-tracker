@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/76c1e6dd19.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="mt-48">
+      <form
+        action="/users/register"
+        method="POST"
+        class="max-w-md mx-auto mt-8 p-6 bg-white shadow-md rounded-lg"
+      >
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 text-sm font-bold mb-2"
+            >Name</label
+          >
+          <div class="relative">
+            <input
+              class="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
+              type="text"
+              placeholder="Username"
+              name="name"
+              id="name"
+            />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 text-sm font-bold mb-2"
+            >Email</label
+          >
+          <div class="relative">
+            <input
+              class="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
+              type="email"
+              placeholder="Email"
+              name="email"
+              id="email"
+            />
+          </div>
+        </div>
+        <div class="mb-6">
+          <label
+            for="password"
+            class="block text-gray-700 text-sm font-bold mb-2"
+            >Password</label
+          >
+          <div class="relative">
+            <input
+              class="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
+              type="password"
+              placeholder="Password"
+              name="password"
+              id="password"
+            />
+          </div>
+        </div>
+        <div class="mb-2">
+          <% if(error) {%>
+          <p class="text-red-500 p-3"><%= error %></p>
+          <% } %>
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Sign In
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="container mx-auto">
+      <div class="flex justify-between my-4">
+        <div class="text-2xl shadow-md rounded-full p-3 text-center">
+          <i class="fa-brands fa-square-github"></i>
+        </div>
+        <a
+          href="/auth/github"
+          class="bg-green-500 text-white p-3 hover:bg-green-400 rounded-lg"
+          >Continue with Github</a
+        >
+      </div>
+      <div class="flex justify-between my-4">
+        <div class="text-2xl shadow-md rounded-full p-3 text-center">
+          <i class="fa-brands fa-google"></i>
+        </div>
+        <a
+          href="/auth/google"
+          class="bg-green-500 text-white p-3 hover:bg-green-400 rounded-lg"
+          >Continue with Google</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<%- include('partials/header') -%>
+<main class="container mx-auto mt-8 fade-in mb-10">
+  <div class="text-center py-20">
+    <h1 class="text-4xl font-bold mb-4">Welcome to Expense Tracker</h1>
+    <p class="text-lg mb-8">
+      Track your expenses effortlessly and manage your finances better.
+    </p>
+
+    <% if(user){ %>
+    <a
+      href="/income"
+      class="bg-blue-600 text-white px-6 py-3 rounded-full button-hover inline-block"
+      >Get Started</a
+    >
+    <% }else{ %>
+    <a
+      href="#"
+      class="bg-blue-600 text-white px-6 py-3 rounded-full button-hover inline-block"
+      >Get Started</a
+    >
+    <% } %>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-20">
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 fade-in"
+    >
+      <h2 class="text-2xl font-semibold mb-2">Easy to Use</h2>
+      <p>
+        Our app is user-friendly and simple to navigate, making expense tracking
+        a breeze.
+      </p>
+    </div>
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 fade-in"
+    >
+      <h2 class="text-2xl font-semibold mb-2">Detailed Reports</h2>
+      <p>Get detailed reports and insights on your spending habits.</p>
+    </div>
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 fade-in"
+    >
+      <h2 class="text-2xl font-semibold mb-2">Secure</h2>
+      <p>Your data is safe with us. We prioritize your privacy and security.</p>
+    </div>
+  </div>
+</main>
+<%- include('partials/footer') -%>
