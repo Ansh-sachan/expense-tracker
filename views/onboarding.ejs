@@ -1,0 +1,83 @@
+<%- include('partials/header') -%>
+<main>
+  <section class="bg-gray-100 min-h-screen">
+    <h1 class="text-3xl font-bold mb-8 text-center fade-in">
+      Welcome to Your Expense Tracker
+    </h1>
+    <div>
+      <div class="bg-white w-4/5 mx-auto p-6 rounded shadow-lg bg-green-100">
+        <div class="flex justify-between">
+          <h2 class="text-2xl">Income Sources</h2>
+          <div>
+            <a href="/incomes/new" class="bg-green-600 p-3 rounded text-white"
+              >Add Income <span>+</span></a
+            >
+          </div>
+        </div>
+        <% if(incomes.length){%> <% incomes.forEach((income)=> { %>
+
+        <div class="bg-white my-4 p-3 rounded">
+          <h3 class=""><%= income.source %></h3>
+          <p class="">$<%= income.amount %></p>
+          <p class=""><%= income.createdAt.toLocaleString() %></p>
+
+          <div class="flex w-10 justify-between">
+            <div>
+              <a href="/incomes/<%=income.id%>/edit ">
+                <button class="edit"><i class="fas fa-edit"></i></button>
+              </a>
+            </div>
+
+            <div>
+              <a href="/incomes/<%=income.id%>/delete ">
+                <button class="delete"><i class="fas fa-trash-alt"></i></button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <%}) } else{ %>
+        <h2>No Income Found</h2>
+        <%} %>
+      </div>
+    </div>
+
+    <!-- expense  -->
+    <div class="mt-6">
+      <div class="bg-white w-4/5 mx-auto p-6 rounded shadow-lg bg-red-100">
+        <div class="flex justify-between">
+          <h2 class="text-2xl">Expenses</h2>
+          <div>
+            <a href="/expenses/new" class="bg-red-600 p-3 rounded text-white"
+              >Add Expense <span>+</span></a
+            >
+          </div>
+        </div>
+        <% if(expenses.length){%> <% expenses.forEach((expense)=> { %>
+
+        <div class="bg-white my-4 p-3 rounded">
+          <h3 class=""><%= expense.category %></h3>
+          <p class="">$<%= expense.amount %></p>
+          <p class=""><%= expense.createdAt.toLocaleString() %></p>
+
+          <div class="flex w-10 justify-between">
+            <div>
+              <a href="/expenses/<%=expense.id%>/edit ">
+                <button class="edit"><i class="fas fa-edit"></i></button>
+              </a>
+            </div>
+
+            <div>
+              <a href="/expenses/<%=expense.id%>/delete ">
+                <button class="delete"><i class="fas fa-trash-alt"></i></button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <%}) } else{ %>
+        <h2>No Expense Found</h2>
+        <%} %>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') -%>

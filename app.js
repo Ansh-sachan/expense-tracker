@@ -13,6 +13,8 @@ require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var incomeRouter = require('./routes/income');
+var expenseRouter = require('./routes/expense');
 
 mongoose
   .connect('mongodb://localhost/expense-tracker')
@@ -50,6 +52,8 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/incomes', incomeRouter);
+app.use('/expenses', expenseRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

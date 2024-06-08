@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var expenseSchema = new Schema(
   {
-    source: { type: String, required: true },
+    category: { type: String, required: true },
     amount: { type: Number, required: true },
     date: { type: Number },
     userId: { type: Schema.Types.ObjectId, ref: 'User' },
@@ -13,4 +13,4 @@ var expenseSchema = new Schema(
 
 var Expense = mongoose.model('Expense', expenseSchema);
 
-module.exports = Income;
+module.exports = Expense;
